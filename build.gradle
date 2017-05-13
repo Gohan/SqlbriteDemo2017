@@ -1,4 +1,29 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "config.gradle"
+
+/**
+ * 定义版本依赖
+ */
+ext {
+    version = [
+            support: '25.3.1',
+            slf4j: '1.7.21',
+            logback: '1.1.1-6',
+    ]
+    dependencies = [
+            'appcompat-v7': dependencies.create("com.android.support:appcompat-v7:${version.support}") {
+                exclude group: 'junit'
+            },
+            'recyclerview-v7': "com.android.support:appcompat-v7:${version.support}",
+            'design': "com.android.support:design:${version.support}",
+            'slf4j-api': "org.slf4j:slf4j-api:${version.slf4j}",
+            'logback-android-core': "com.github.tony19:logback-android-core:${version.logback}",
+            'logback-android-classic': dependencies.create("com.github.tony19:logback-android-classic:${version.logback}") {
+                // workaround issue #73
+                exclude group: 'com.google.android', module: 'android'
+            },
+    ]
+}
 
 buildscript {
     repositories {

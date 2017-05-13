@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        defaultPublishConfig 'release'
+        publishNonDefault true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+
+    // Logback
+    compile rootProject.ext.dependencies['slf4j-api']
+    compile rootProject.ext.dependencies['logback-android-core']
+    compile rootProject.ext.dependencies['logback-android-classic']
+}
+
+task myTask {
+    println android.sourceSets.debug.getClass().methods*.name.sort().unique()
+    println android.sourceSets.debug.getJava()
+    println android.sourceSets.debug.getJavaDirectories()
+    println android.sourceSets.debug.getAssets()
+    println android.sourceSets.release.getAssets()
+    println android.sourceSets
+}

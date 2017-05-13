@@ -42,3 +42,4 @@ local.properties
 
 # Keystore files
 *.jks
+/config.gradle

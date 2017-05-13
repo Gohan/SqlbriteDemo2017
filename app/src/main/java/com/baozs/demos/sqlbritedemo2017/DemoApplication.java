@@ -20,7 +20,6 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.moshi.MoshiConverterFactory;
 import rx.Scheduler;
 import rx.schedulers.Schedulers;
-import timber.log.Timber;
 
 /**
  * Created by vashzhong on 2017/4/23.
@@ -83,9 +82,6 @@ public class DemoApplication extends Application {
                 LOG.info(message);
             }
         }).build();
-
-
-        Timber.plant(new Timber.DebugTree());
 
         Retrofit retrofit2 = new Retrofit.Builder()
                 .baseUrl(V2exService.baseUrl)

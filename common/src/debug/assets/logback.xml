@@ -55,7 +55,7 @@
 
     <appender name="logcat" class="ch.qos.logback.classic.android.LogcatAppender">
     <encoder>
-    <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    <pattern>[D]%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
     </encoder>
     </appender>
     <root level="DEBUG">
