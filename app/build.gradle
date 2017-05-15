@@ -38,27 +38,29 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-    compile 'org.apache.commons:commons-lang3:3.5'
+    
 
     compile rootProject.ext.dependencies['appcompat-v7']
     compile rootProject.ext.dependencies['recyclerview-v7']
     compile rootProject.ext.dependencies['design']
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     // Retrofit
+    // Sqlbrite
+    // Rxandroid1
+    // Debug
+    
+    debugCompile project(path: ':common', configuration: 'debug')
+    releaseCompile project(path: ':common', configuration: 'release')
+    compile 'org.apache.commons:commons-lang3:3.5'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.squareup.retrofit2:converter-moshi:2.2.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
-    // Sqlbrite
     compile 'com.squareup.sqlbrite:sqlbrite:1.1.1'
-    // Rxandroid1
     compile 'io.reactivex:rxandroid:1.2.1'
-    // Debug
     compile 'com.facebook.stetho:stetho:1.5.0'
     testCompile 'junit:junit:4.12'
-
-    debugCompile project(path: ':common', configuration: 'debug')
-    releaseCompile project(path: ':common', configuration: 'release')
 }
+
 
 task myTask {
     println android.sourceSets.debug.getClass().methods*.name.sort().unique()

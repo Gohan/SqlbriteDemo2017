@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.baozs.demos.sqlbritedemo2017"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.baozs.demos.sqlbritedemo2017"> <!-- 覆盖依赖库的sdk设置 -->
+    <uses-sdk tools:overrideLibrary="com.baozs.devkit.common" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- 覆盖依赖库的sdk设置 -->
-    <uses-sdk tools:overrideLibrary="com.baozs.devkit.common"/>
 
     <application
         android:name=".DemoApplication"
@@ -16,7 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +24,8 @@
         <activity
             android:name=".V2PostsActivity"
             android:label="@string/title_activity_v2_posts"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".listview.ListViewActivity"></activity>
     </application>
 
 </manifest>

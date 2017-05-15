@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.baozs.demos.sqlbritedemo2017.listview.ListViewActivity;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             public void call(String s) {
                 LOG.debug("Start activity... {}", s);
 
-                Intent intent = new Intent(MainActivity.this, V2PostsActivity.class);
+                Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
                 MainActivity.this.startActivity(intent);
             }
         });
