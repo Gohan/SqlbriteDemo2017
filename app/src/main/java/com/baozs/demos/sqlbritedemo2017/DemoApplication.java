@@ -2,6 +2,7 @@ package com.baozs.demos.sqlbritedemo2017;
 
 import android.app.Application;
 
+import com.baozs.devkit.common.AppCommon;
 import com.facebook.stetho.Stetho;
 import com.squareup.sqlbrite.BriteDatabase;
 import com.squareup.sqlbrite.SqlBrite;
@@ -71,6 +72,9 @@ public class DemoApplication extends Application {
     public void onCreate() {
         super.onCreate();
         sApplication = this;
+
+        AppCommon.init();
+
         Stetho.initializeWithDefaults(this);
         mDatabaseManager = new DatabaseManager(this);
 
