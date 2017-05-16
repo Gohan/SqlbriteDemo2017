@@ -4,6 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.nikitakozlov.pury.annotations.MethodProfilings;
+import com.nikitakozlov.pury.annotations.StartProfiling;
+import com.nikitakozlov.pury.annotations.StopProfiling;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

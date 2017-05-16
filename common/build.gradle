@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.nikitakozlov.weaverlite'
 
 android {
     compileSdkVersion 25
@@ -24,6 +25,11 @@ android {
     }
 }
 
+weaverLite {
+    enabledForDebug = true
+    enabledForRelease = false
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -35,6 +41,10 @@ dependencies {
     compile rootProject.ext.dependencies['slf4j-api']
     compile rootProject.ext.dependencies['logback-android-core']
     compile rootProject.ext.dependencies['logback-android-classic']
+
+    compile 'com.nikitakozlov.pury:annotations:1.0.1'
+    debugCompile 'com.nikitakozlov.pury:pury:1.1.0'
+    releaseCompile 'com.nikitakozlov.pury:pury-no-op:1.1.0'
 }
 
 task myTask {

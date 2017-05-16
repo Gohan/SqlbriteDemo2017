@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.nikitakozlov.pury.annotations.MethodProfiling;
 import com.squareup.sqlbrite.BriteDatabase;
 
 import org.slf4j.Logger;
@@ -53,6 +54,7 @@ public class V2PostsActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mPostAdapter);
 
         mRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @MethodProfiling(profilerName = "V2PostsActivity::onRefresh()")
             @Override
             public void onRefresh() {
                 LOG.info("Pulldown onRefresh()");
